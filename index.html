@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹 개발 학습 포트폴리오</title>
+    <!-- 구글 폰트 (나눔명조, 나눔고딕) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Nanum+Myeongjo:wght@400;700&display=swap" rel="stylesheet">
+    <!-- 외부 CSS 연결 -->
+    <link rel="stylesheet" href="css/style.css?v=3.31">
+    <!-- 외부 JS 연결 (defer 속성 사용) -->
+    <script src="js/script.js?v=17" defer></script>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">본문으로 이동</a>
+    <!-- 로고는 왼쪽, 메뉴는 오른쪽에 배치 -->
+    <header id="header">
+        <div class="header-inner">
+            <h1><a href="#hero">Yuhyun Lim</a></h1>
+            <nav id="nav-menu" aria-label="주요 메뉴">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="controls">
+                <button id="dark-mode-toggle" type="button" aria-label="다크 모드 전환" aria-pressed="false">
+                    <svg class="sun-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <button id="hamburger-btn" type="button" aria-label="메뉴 열기" aria-controls="nav-menu" aria-expanded="false">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+        <!-- Hero 섹션 -->
+        <section id="hero" class="fade-section">
+            <h2>안녕하세요, <br><span class="accent-text">성장하는 프론트엔드 개발자</span>입니다.</h2>
+            <a href="#projects" class="btn">프로젝트 보기</a>
+        </section>
+
+        <section id="about" class="fade-section">
+            <h2>About</h2>
+            <div class="about-content">
+                <img class="profile-image" src="images/profile.png?v=8" alt="hauteville1862의 프로필 캐리커처 일러스트" width="160" height="160" loading="lazy">
+                <ul class="about-list">
+                    <li>이노베이션아카데미의 AI·SW 교육 과정인 Codyssey에 참여하고 있습니다.</li>
+                    <li>이 웹페이지는 Codex, Claude Code, Antigravity 등 AI 코딩 도구의 도움을 받아 만들었습니다.</li>
+                    <li>AI가 작성한 코드를 한 줄씩 이해하는 연습을 하고 있습니다.</li>
+                    <li>HTML, CSS, JavaScript가 각각 무슨 역할을 하는지 배우는 단계입니다.</li>
+                    <li>목표는 이 페이지의 코드를 누군가에게 제 언어로 설명할 수 있게 되는 것입니다.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Skills 섹션: 이 프로젝트에 사용된 기술 -->
+        <section id="skills" class="fade-section">
+            <h2>Skills</h2>
+            <p>이 프로젝트에 사용된 기술입니다.</p>
+            <ul class="skills-list" role="list">
+                <li><span class="skill-emoji" aria-hidden="true">🧱</span><span><strong>HTML5</strong> — 페이지의 뼈대와 구조</span></li>
+                <li><span class="skill-emoji" aria-hidden="true">🎨</span><span><strong>CSS3</strong> — 색상, 배치, 반응형 디자인</span></li>
+                <li><span class="skill-emoji" aria-hidden="true">⚡</span><span><strong>JavaScript (ES6+)</strong> — 사용자 조작에 따른 화면 변화</span></li>
+                <li><span class="skill-emoji" aria-hidden="true">🔗</span><span><strong>GitHub API</strong> — 외부 데이터 연동</span></li>
+                <li><span class="skill-emoji" aria-hidden="true">🚀</span><span><strong>Git & GitHub Pages</strong> — 버전 관리 및 정적 웹 배포</span></li>
+            </ul>
+        </section>
+
+        <!-- Projects 섹션 (GitHub API 연동) -->
+        <section id="projects" class="fade-section">
+            <h2>Projects</h2>
+            <!-- 상태를 보여줄 컨테이너 (로딩/에러/빈상태/성공) -->
+            <div id="github-container">
+                <div id="api-status" role="status" aria-live="polite">데이터를 불러오는 중입니다...</div>
+                <button id="retry-repos" class="btn" type="button" hidden>다시 시도</button>
+                <!-- JS로 동적 렌더링될 article 요소들이 들어갈 곳 -->
+                <div id="repo-list" class="grid-container"></div>
+            </div>
+        </section>
+
+        <!-- Contact 섹션 (폼 유효성 검사) -->
+        <section id="contact" class="fade-section">
+            <h2>Contact</h2>
+            <p id="form-note">입력 내용을 확인하는 연습용 폼입니다. 실제 이메일은 전송하지 않습니다.</p>
+            <form id="contact-form" novalidate aria-describedby="form-note">
+                <div class="form-group">
+                    <label for="name">이름</label>
+                    <input type="text" id="name" name="name" autocomplete="name" required aria-describedby="name-error">
+                    <p id="name-error" class="field-error" aria-live="polite"></p>
+                </div>
+                <div class="form-group">
+                    <label for="email">이메일</label>
+                    <input type="email" id="email" name="email" autocomplete="email" required aria-describedby="email-error">
+                    <p id="email-error" class="field-error" aria-live="polite"></p>
+                </div>
+                <div class="form-group">
+                    <label for="message">메시지</label>
+                    <textarea id="message" name="message" rows="3" required aria-describedby="message-error"></textarea>
+                    <p id="message-error" class="field-error" aria-live="polite"></p>
+                </div>
+                <button type="submit" class="btn">입력 확인</button>
+                <p id="form-msg" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+
+    </main>
+    <footer id="footer">
+        <div class="footer-inner">
+            <span class="footer-logo"><a href="#hero">Yuhyun Lim</a></span>
+            <p class="footer-copyright">&copy; 2026 hauteville1862. All rights reserved.</p>
+            <ul class="footer-links" aria-label="바닥글 링크">
+                <li><a href="https://github.com/hauteville1862" target="_blank" rel="noopener noreferrer">GitHub <span class="external-arrow" aria-hidden="true">&#x2197;</span></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- 스크롤 탑 버튼 -->
+    <button id="scroll-top-btn" type="button" aria-label="페이지 맨 위로 이동" hidden>↑</button>
+</body>
+</html>
