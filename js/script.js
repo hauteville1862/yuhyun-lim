@@ -14,8 +14,8 @@ const GITHUB_USERNAME = 'hauteville1862';
 // 첫 화면 강조 문구. 첫 번째 문구는 HTML과 스크린 리더용 문구와 같게 둔다.
 const TYPING_PHRASES = [
     'AI로 반복되는 운영을 줄이는',
-    '흩어진 요청을 맞는 곳에 잇는',
-    '정한 일을 끝까지 챙기는'
+    '민원 현장의 요청을 맞는 곳에 잇는',
+    '프랑스어와 영어로 일하는'
 ];
 const TYPING_DELAY = { type: 90, erase: 45, hold: 2000, next: 400 };
 
