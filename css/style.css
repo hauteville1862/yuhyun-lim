@@ -1,8 +1,8 @@
 /* 모바일 화면을 기본으로 작성하고 768px, 1024px에서 확장한다. */
 :root {
     --bg-main: #ffffff;
-    --bg-surface: #f6f6f9;
-    --bg-header-scrolled: #f6f6f9;
+    --bg-surface: #ffffff;
+    --bg-header-scrolled: #ffffff;
     --text-title: #1b212c;
     --text-main: #343b46;
     --text-muted: #505766;

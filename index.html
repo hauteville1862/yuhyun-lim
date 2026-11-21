@@ -9,9 +9,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Nanum+Myeongjo:wght@400;700&display=swap" rel="stylesheet">
     <!-- 외부 CSS 연결 -->
-    <link rel="stylesheet" href="css/style.css?v=3.31">
+    <link rel="stylesheet" href="css/style.css?v=3.32">
     <!-- 외부 JS 연결 (defer 속성 사용) -->
-    <script src="js/script.js?v=17" defer></script>
+    <script src="js/script.js?v=18" defer></script>
 </head>
 <body>
     <a class="skip-link" href="#main-content">본문으로 이동</a>
@@ -24,7 +24,6 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
             <div class="controls">
@@ -52,7 +51,7 @@
     <main id="main-content" tabindex="-1">
         <!-- Hero 섹션 -->
         <section id="hero" class="fade-section">
-            <h2>안녕하세요, <br><span class="accent-text">성장하는 프론트엔드 개발자</span>입니다.</h2>
+            <h2>안녕하세요, <br><span class="accent-text">AI로 반복되는 운영을 줄이는</span> 임유현입니다.</h2>
             <a href="#projects" class="btn">프로젝트 보기</a>
         </section>
 
@@ -93,31 +92,6 @@
                 <!-- JS로 동적 렌더링될 article 요소들이 들어갈 곳 -->
                 <div id="repo-list" class="grid-container"></div>
             </div>
-        </section>
-
-        <!-- Contact 섹션 (폼 유효성 검사) -->
-        <section id="contact" class="fade-section">
-            <h2>Contact</h2>
-            <p id="form-note">입력 내용을 확인하는 연습용 폼입니다. 실제 이메일은 전송하지 않습니다.</p>
-            <form id="contact-form" novalidate aria-describedby="form-note">
-                <div class="form-group">
-                    <label for="name">이름</label>
-                    <input type="text" id="name" name="name" autocomplete="name" required aria-describedby="name-error">
-                    <p id="name-error" class="field-error" aria-live="polite"></p>
-                </div>
-                <div class="form-group">
-                    <label for="email">이메일</label>
-                    <input type="email" id="email" name="email" autocomplete="email" required aria-describedby="email-error">
-                    <p id="email-error" class="field-error" aria-live="polite"></p>
-                </div>
-                <div class="form-group">
-                    <label for="message">메시지</label>
-                    <textarea id="message" name="message" rows="3" required aria-describedby="message-error"></textarea>
-                    <p id="message-error" class="field-error" aria-live="polite"></p>
-                </div>
-                <button type="submit" class="btn">입력 확인</button>
-                <p id="form-msg" role="status" aria-live="polite"></p>
-            </form>
         </section>
 
     </main>

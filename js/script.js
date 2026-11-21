@@ -4,9 +4,6 @@ const menuButton = document.querySelector('#hamburger-btn');
 const navMenu = document.querySelector('#nav-menu');
 const header = document.querySelector('#header');
 const scrollTopButton = document.querySelector('#scroll-top-btn');
-const contactForm = document.querySelector('#contact-form');
-const formFields = contactForm.querySelectorAll('input, textarea');
-const formMessage = document.querySelector('#form-msg');
 const apiStatus = document.querySelector('#api-status');
 const repoList = document.querySelector('#repo-list');
 const retryButton = document.querySelector('#retry-repos');
@@ -18,11 +15,7 @@ const STATE = {
     theme: 'light',
     isMenuOpen: false,
     repos: [],
-    repoStatus: 'idle',
-    form: {
-        errors: { name: '', email: '', message: '' },
-        successMessage: ''
-    }
+    repoStatus: 'idle'
 };
 let scrollTopFrame = null;
 
@@ -47,47 +40,6 @@ function renderMenu() {
     navMenu.classList.toggle('active', STATE.isMenuOpen);
     menuButton.ariaExpanded = String(STATE.isMenuOpen);
     menuButton.ariaLabel = STATE.isMenuOpen ? '메뉴 닫기' : '메뉴 열기';
-}
-
-// 폼: 검증 결과는 STATE에 기록하고, renderForm에서 화면에 반영한다.
-function updateFieldError(field) {
-    const value = field.value.trim();
-    let error = '';
-
-    if (value === '') {
-        error = '이 항목을 입력해주세요.';
-    } else if (field.name === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
-        error = '이메일을 이름@도메인.확장자 형식으로 입력해주세요.';
-    }
-
-    STATE.form.errors[field.name] = error;
-}
-
-function renderForm() {
-    formFields.forEach(field => {
-        const error = STATE.form.errors[field.name];
-        const errorElement = document.querySelector(`#${field.name}-error`);
-        errorElement.textContent = error;
-        field.ariaInvalid = String(error !== '');
-    });
-    formMessage.textContent = STATE.form.successMessage;
-    formMessage.classList.toggle('form-success', STATE.form.successMessage !== '');
-}
-
-function submitContactForm(event) {
-    event.preventDefault();
-    formFields.forEach(updateFieldError);
-    STATE.form.successMessage = '';
-
-    const { name, email, message } = STATE.form.errors;
-    if (name || email || message) {
-        renderForm();
-        return;
-    }
-
-    contactForm.reset();
-    STATE.form.successMessage = '입력 내용이 확인되었습니다. 실제 이메일은 전송되지 않았습니다.';
-    renderForm();
 }
 
 // GitHub 프로젝트
@@ -256,15 +208,6 @@ navMenu.querySelectorAll('a').forEach(link => {
     });
 });
 
-formFields.forEach(field => {
-    field.addEventListener('input', () => {
-        updateFieldError(field);
-        STATE.form.successMessage = '';
-        renderForm();
-    });
-});
-
-contactForm.addEventListener('submit', submitContactForm);
 retryButton.addEventListener('click', fetchGitHubRepos);
 window.addEventListener('scroll', updateScrollState);
 window.addEventListener('pageshow', updateScrollState);
@@ -284,7 +227,6 @@ function initializePage() {
 
     renderTheme();
     renderMenu();
-    renderForm();
     updateScrollState();
     observeSections();
     fetchGitHubRepos();
