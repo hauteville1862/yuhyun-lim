@@ -262,6 +262,42 @@ h2 {
         opacity: 0;
     }
 }
+/* Projects 전후 비교 목록: 모바일은 위아래로 쌓고 768px부터 칸을 맞춘다. */
+.change-list {
+    display: flex;
+    flex-direction: column;
+    max-width: 60rem;
+    margin-top: var(--space-md);
+}
+.change-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: var(--space-sm) 0;
+    border-bottom: 1px solid var(--border-color);
+    word-break: keep-all;
+}
+.change-head {
+    display: none;
+}
+.change-name {
+    color: var(--text-title);
+    font-weight: 700;
+}
+.change-flow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.25rem 0.5rem;
+}
+.change-before,
+.change-arrow {
+    color: var(--text-muted);
+}
+.change-after {
+    flex-basis: 100%;
+    font-weight: 700;
+}
 
 p {
     color: var(--text-main);
@@ -754,6 +790,26 @@ input::placeholder, textarea::placeholder {
     }
     .card {
         padding: var(--space-md);
+    }
+    .change-item {
+        display: grid;
+        grid-template-columns: minmax(0, 15rem) minmax(0, 1fr);
+        align-items: baseline;
+        gap: var(--space-md);
+    }
+    .change-head {
+        padding: 0 0 var(--space-xs);
+        color: var(--text-muted);
+        font-size: var(--text-sm);
+        font-weight: 700;
+    }
+    .change-flow {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 1.5rem minmax(0, 1fr);
+        gap: var(--space-sm);
+    }
+    .change-arrow {
+        text-align: center;
     }
     .footer-inner {
         display: grid;

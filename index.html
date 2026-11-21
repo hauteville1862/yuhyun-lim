@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Nanum+Myeongjo:wght@400;700&display=swap" rel="stylesheet">
     <!-- 외부 CSS 연결 -->
-    <link rel="stylesheet" href="css/style.css?v=3.35">
+    <link rel="stylesheet" href="css/style.css?v=3.36">
     <!-- 외부 JS 연결 (defer 속성 사용) -->
     <script src="js/script.js?v=20" defer></script>
 </head>
@@ -82,14 +82,50 @@
             </ul>
         </section>
 
-        <!-- Projects 섹션: 한 줄 목록 -->
+        <!-- Projects 섹션: 전후 비교 -->
         <section id="projects" class="fade-section">
             <h2>Projects</h2>
-            <ul class="about-list">
-                <li><strong>AI 에이전트 '에오스' 운영</strong><br>에이전트 3개에 역할과 승인 기준을 나눠, 반복 프롬프트를 지침 파일 3종으로 대체</li>
-                <li><strong>아침 모임 모닝글로리 운영</strong><br>비정기 모임을 매주 정기 모임으로 바꿔 계획한 8회를 모두 개최</li>
-                <li><strong>출입국 창구 반복 업무 개선</strong><br>문자 템플릿 2개와 단축키 3개를 반장 4명과 과장 2명이 도입</li>
-                <li><strong>안내데스크 요청 연결</strong><br>말한 용건 뒤의 실제 목적을 파악해 맞는 부서와 절차로 연결</li>
+            <ul class="change-list">
+                <li class="change-item change-head" aria-hidden="true">
+                    <span class="change-name"></span>
+                    <span class="change-flow">
+                        <span class="change-before">전</span>
+                        <span class="change-arrow"></span>
+                        <span class="change-after">후</span>
+                    </span>
+                </li>
+                <li class="change-item">
+                    <strong class="change-name">AI 에이전트 '에오스' 운영</strong>
+                    <span class="change-flow">
+                        <span class="change-before"><span class="sr-only">전: </span>매번 같은 프롬프트를 다시 입력</span>
+                        <span class="change-arrow" aria-hidden="true">→</span>
+                        <strong class="change-after accent-text"><span class="sr-only">후: </span>지침 파일 3종으로 대체</strong>
+                    </span>
+                </li>
+                <li class="change-item">
+                    <strong class="change-name">아침 모임 모닝글로리 운영</strong>
+                    <span class="change-flow">
+                        <span class="change-before"><span class="sr-only">전: </span>열고 싶은 날만 여는 비정기 모임</span>
+                        <span class="change-arrow" aria-hidden="true">→</span>
+                        <strong class="change-after accent-text"><span class="sr-only">후: </span>매주 정기 모임, 계획한 8회 모두 개최</strong>
+                    </span>
+                </li>
+                <li class="change-item">
+                    <strong class="change-name"><a href="https://book-thumbnail.hauteville1862.workers.dev" target="_blank" rel="noopener noreferrer">북 썸네일 생성기 웹앱</a></strong>
+                    <span class="change-flow">
+                        <span class="change-before"><span class="sr-only">전: </span>게시물마다 썸네일을 손으로 제작</span>
+                        <span class="change-arrow" aria-hidden="true">→</span>
+                        <strong class="change-after accent-text"><span class="sr-only">후: </span>공개 웹앱 배포, 썸네일 약 10장 제작</strong>
+                    </span>
+                </li>
+                <li class="change-item">
+                    <strong class="change-name">프랑스 비시(Vichy) 어학연수</strong>
+                    <span class="change-flow">
+                        <span class="change-before"><span class="sr-only">전: </span>유학원 없이 혼자 준비</span>
+                        <span class="change-arrow" aria-hidden="true">→</span>
+                        <strong class="change-after accent-text"><span class="sr-only">후: </span>약 4개월 현지 연수</strong>
+                    </span>
+                </li>
             </ul>
         </section>
 
