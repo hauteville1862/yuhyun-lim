@@ -1,20 +1,10 @@
-# Yuhyun Lim | B1-1 포트폴리오
+# Yuhyun Lim | 포트폴리오
 
 테마 전환, GitHub 저장소 조회, 폼 입력 검증을 제공하는 반응형 자기소개 웹사이트입니다.
 
 ## 사용 기술
 
 HTML5, CSS3, JavaScript (ES6+), GitHub REST API, Google Fonts, GitHub Pages
-
-## 링크
-
-- [배포 사이트](https://hauteville1862.github.io/codyssey-b1-1/)
-
-## 동작 기준
-
-- 맨 위로 버튼 표시: 스크롤 300px 이상
-- 네비게이션 배경 변경: 스크롤 60px 이상
-- 스크롤 등장 효과: Intersection Observer 임계값 0.2
 
 ## 스크린샷
 
