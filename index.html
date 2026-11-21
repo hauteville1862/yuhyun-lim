@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Nanum+Myeongjo:wght@400;700&display=swap" rel="stylesheet">
     <!-- 외부 CSS 연결 -->
-    <link rel="stylesheet" href="css/style.css?v=3.33">
+    <link rel="stylesheet" href="css/style.css?v=3.34">
     <!-- 외부 JS 연결 (defer 속성 사용) -->
     <script src="js/script.js?v=19" defer></script>
 </head>
@@ -24,6 +24,7 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#projects">Projects</a></li>
+                    <li><a href="#repositories">Repositories</a></li>
                 </ul>
             </nav>
             <div class="controls">
@@ -60,10 +61,11 @@
             <div class="about-content">
                 <img class="profile-image" src="images/profile.png?v=8" alt="hauteville1862의 프로필 캐리커처 일러스트" width="160" height="160" loading="lazy">
                 <ul class="about-list">
-                    <li><strong>반복 업무 개선:</strong> 출입국 청년 인턴 때 반복 작업을 안내 문자 템플릿 2개와 단축키 3개로 정리했고, 반장 4명과 과장 2명이 업무에 도입했습니다.</li>
-                    <li><strong>요청 파악과 연결:</strong> 민원인이 말한 용건 뒤의 실제 목적을 파악해 맞는 부서와 절차로 연결했습니다.</li>
-                    <li><strong>일정과 행사 운영:</strong> 비정기 아침 모임을 매주 정기 모임으로 바꿔 계획한 8회를 모두 열었고, 명단 31명 행사를 4개 팀으로 진행했습니다.</li>
-                    <li><strong>영상 편집과 품질 검수:</strong> 16분 원본을 학습 클립 24개로 나누는 작업을 AI 편집, 검수 에이전트에 맡기고, 기준을 정해 결과를 직접 확인했습니다.</li>
+                    <li><strong>2026.09 ~ 현재</strong> 코디세이 AI 올인원 2기. 비전공으로 입학연수 400명 중 상위 200명 안에 들어 본 과정에 진입했고, 아침 모임 모닝글로리 운영으로 2026년 3분기 우수 학생에 선정됐습니다.</li>
+                    <li><strong>2026.04 ~ 2026.09</strong> 서울출입국외국인청 세종로출장소 청년 인턴. 외국인 민원 창구와 안내데스크에서 서류 입력, 자료 정리, 영어 응대를 맡았습니다.</li>
+                    <li><strong>2025.03 ~ 2026.02</strong> 프랑스어 원어 연극 학회 페르소나. 《Piège pour un homme seul》 주연, 《La Réunification des deux Corées》 조연을 맡고 한국어 자막을 최종 검수했습니다.</li>
+                    <li><strong>2023.09 ~ 2023.12</strong> 프랑스 비시(Vichy) 어학연수. 유학원 없이 어학원과 프랑스어 메일로 직접 연락해 준비했습니다.</li>
+                    <li><strong>2021.03 ~ 2027.02</strong> 숙명여자대학교 프랑스언어문화학 전공 (졸업 예정)</li>
                 </ul>
             </div>
         </section>
@@ -76,14 +78,93 @@
                 <li><span class="skill-emoji" aria-hidden="true">🤖</span><span><strong>Claude Code, Codex</strong> — AI 에이전트 역할 설계, 지침 파일 작성, 결과 검수</span></li>
                 <li><span class="skill-emoji" aria-hidden="true">🎬</span><span><strong>ffmpeg, ffprobe</strong> — 영상 컷, 음량 조정, 페이드, 배속, 인코딩</span></li>
                 <li><span class="skill-emoji" aria-hidden="true">📊</span><span><strong>Excel</strong> — 대량 목록 정리와 대조</span></li>
-                <li><span class="skill-emoji" aria-hidden="true">🗣️</span><span><strong>프랑스어</strong> — DELF B1, 원문 대조 번역 검수</span></li>
                 <li><span class="skill-emoji" aria-hidden="true">💬</span><span><strong>영어</strong> — TOEIC 920, OPIc IH, 외국인 민원 응대</span></li>
+                <li><span class="skill-emoji" aria-hidden="true">🗣️</span><span><strong>프랑스어</strong> — DELF B1, 원문 대조 번역 검수</span></li>
             </ul>
         </section>
 
-        <!-- Projects 섹션 (GitHub API 연동) -->
+        <!-- Projects 섹션: 경험 카드 -->
         <section id="projects" class="fade-section">
             <h2>Projects</h2>
+            <div class="grid-container">
+                <article class="card">
+                    <div class="card-body">
+                        <h3>AI 에이전트 '에오스' 운영</h3>
+                        <p><strong>문제:</strong> 모임 자료를 AI로 만들 때마다 역할, 규칙, 디자인 기준을 같은 프롬프트로 다시 넣어야 했습니다.</p>
+                        <p><strong>한 일:</strong> 반복하던 프롬프트를 페르소나, 작업 지침, 디자인 기준 파일로 정리하고 에이전트 3개로 역할을 나눴습니다. 파일 변경, 외부 게시, 참가자 연락, 비용은 사전 승인을 거치게 했습니다.</p>
+                        <p><strong>결과:</strong> 지침 파일 3종이 반복 프롬프트를 대신했고, 1주 동안 안내 자료 6개 버전 중 최종 2종을 확정했습니다. 지난 공지 10건도 파일로 정리해 색인했습니다.</p>
+                    </div>
+                    <div class="card-meta">
+                        <span class="repo-lang">Claude Code, Codex</span>
+                        <span class="repo-stars">2026.11 ~</span>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-body">
+                        <h3>출입국 창구 반복 업무 개선</h3>
+                        <p><strong>문제:</strong> 유학생 시즌에 외국인 민원 업무가 몰렸지만, 업무 시스템은 코딩이나 자동화 도구를 쓸 수 없었습니다.</p>
+                        <p><strong>한 일:</strong> 반복 작업을 골라 등록증 교부 안내와 체류기간 연장 입력 방법을 문자 템플릿 2개로, 입력과 인쇄 동작을 단축키 3개로 정리해 공유했습니다.</p>
+                        <p><strong>결과:</strong> 반장 4명과 과장 2명이 이 방식을 실제 업무에 도입했습니다.</p>
+                    </div>
+                    <div class="card-meta">
+                        <span class="repo-lang">청년 인턴</span>
+                        <span class="repo-stars">2026</span>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-body">
+                        <h3>영어 쉐도잉 학습 클립 제작</h3>
+                        <p><strong>문제:</strong> 16분 27초 영어 쉐도잉 원본을 스터디원이 주차별로 따라 읽기 좋은 클립으로 나눠야 했습니다.</p>
+                        <p><strong>한 일:</strong> 편집 에이전트와 검수 에이전트를 나누고, 앞 1초와 뒤 1.5초 여유 같은 학습자 기준을 정했습니다. 렌더링과 측정은 에이전트가 맡고, 단계마다 결과를 확인해 승인했습니다.</p>
+                        <p><strong>결과:</strong> 1배속 클립 12개와 0.7배속판 12개를 만들었고, 1차 품질 검사 FAIL 뒤 재검수에서 PASS를 받았습니다.</p>
+                    </div>
+                    <div class="card-meta">
+                        <span class="repo-lang">Claude Code, ffmpeg</span>
+                        <span class="repo-stars">2026</span>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-body">
+                        <h3>안내데스크 요청 연결</h3>
+                        <p><strong>문제:</strong> 민원인이 말하는 용건과 실제로 필요한 업무가 다른 경우가 있었습니다.</p>
+                        <p><strong>한 일:</strong> 비자를 묻던 민원인이 들고 온 서류가 3층 근무 때 본 양식이라는 점에서 실제 목적이 기업의 외국인 초청임을 파악했습니다. 판단이 어려운 사례는 담당 반장에게 상황을 설명해 확인을 받았습니다.</p>
+                        <p><strong>결과:</strong> 기업 초청 건은 담당 부서인 3층으로, 건강보험 적용이 필요한 가족은 비상 프로토콜에 따른 대리 서류 발급으로 연결했습니다.</p>
+                    </div>
+                    <div class="card-meta">
+                        <span class="repo-lang">청년 인턴</span>
+                        <span class="repo-stars">2026</span>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-body">
+                        <h3>아침 모임 모닝글로리 운영</h3>
+                        <p><strong>문제:</strong> 퍼실리테이터가 운영하던 아침 모임이 교육생 주도로 넘어오면서 열고 싶은 날만 여는 비정기 모임이 됐습니다.</p>
+                        <p><strong>한 일:</strong> 매주 월요일 오전 10시로 고정하고 전날 저녁과 당일 아침 리마인드를 붙였습니다. 명단 31명 행사에서는 4개 팀과 진행자 4명을 배치하고 진행자 가이드로 시작과 종료 시각을 맞췄습니다.</p>
+                        <p><strong>결과:</strong> 계획한 8회를 모두 열었고, 평소 약 10명이던 모임에 약 30명이 참석했습니다.</p>
+                    </div>
+                    <div class="card-meta">
+                        <span class="repo-lang">호스트</span>
+                        <span class="repo-stars">2026.09 ~</span>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-body">
+                        <h3><a href="https://book-thumbnail.hauteville1862.workers.dev" target="_blank" rel="noopener noreferrer">북 썸네일 생성기 웹앱</a></h3>
+                        <p><strong>문제:</strong> 북스타그램 게시물마다 책 표지에 어울리는 썸네일을 손으로 만들어야 했고, 외부 API를 연동해 본 적이 없었습니다.</p>
+                        <p><strong>한 일:</strong> 책 제목 검색, 네이버 책 API로 표지 불러오기, 표지에 맞춘 배경색 지정까지 기능 범위를 정하고 Claude Code와 함께 구현해 Cloudflare Workers에 배포했습니다.</p>
+                        <p><strong>결과:</strong> 공개 웹앱을 배포해 썸네일 약 10장을 만드는 데 썼습니다.</p>
+                    </div>
+                    <div class="card-meta">
+                        <span class="repo-lang">Claude Code, Cloudflare Workers</span>
+                        <span class="repo-stars">2026</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Repositories 섹션 (GitHub API 연동) -->
+        <section id="repositories" class="fade-section">
+            <h2>Repositories</h2>
             <!-- 상태를 보여줄 컨테이너 (로딩/에러/빈상태/성공) -->
             <div id="github-container">
                 <div id="api-status" role="status" aria-live="polite">데이터를 불러오는 중입니다...</div>

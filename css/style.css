@@ -464,6 +464,7 @@ button:disabled {
     line-height: 1.75;
     margin-bottom: 0;
     color: var(--text-muted);
+    word-break: keep-all;
 }
 #api-status {
     display: inline-block;
