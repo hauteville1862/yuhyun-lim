@@ -7,15 +7,25 @@ const scrollTopButton = document.querySelector('#scroll-top-btn');
 const apiStatus = document.querySelector('#api-status');
 const repoList = document.querySelector('#repo-list');
 const retryButton = document.querySelector('#retry-repos');
+const heroTitle = document.querySelector('#hero h2');
+const typingText = document.querySelector('#typing-text');
 
 const GITHUB_USERNAME = 'hauteville1862';
+// 첫 화면 강조 문구. 첫 번째 문구는 HTML과 스크린 리더용 문구와 같게 둔다.
+const TYPING_PHRASES = [
+    'AI로 반복되는 운영을 줄이는',
+    '흩어진 요청을 맞는 곳에 잇는',
+    '정한 일을 끝까지 챙기는'
+];
+const TYPING_DELAY = { type: 90, erase: 45, hold: 2000, next: 400 };
 
 // 이벤트가 상태를 바꾸고, render 함수가 그 상태를 화면에 반영한다.
 const STATE = {
     theme: 'light',
     isMenuOpen: false,
     repos: [],
-    repoStatus: 'idle'
+    repoStatus: 'idle',
+    typing: { phraseIndex: 0, charCount: 0, isErasing: false }
 };
 let scrollTopFrame = null;
 
@@ -40,6 +50,64 @@ function renderMenu() {
     navMenu.classList.toggle('active', STATE.isMenuOpen);
     menuButton.ariaExpanded = String(STATE.isMenuOpen);
     menuButton.ariaLabel = STATE.isMenuOpen ? '메뉴 닫기' : '메뉴 열기';
+}
+
+// 첫 화면 타이핑: 강조 문구를 한 글자씩 쓰고 지우며 번갈아 보여준다.
+function renderTyping() {
+    const { phraseIndex, charCount } = STATE.typing;
+    const characters = Array.from(TYPING_PHRASES[phraseIndex]);
+    typingText.textContent = characters.slice(0, charCount).join('');
+}
+
+// 가장 긴 문구 기준으로 제목 높이를 잡아, 글자가 바뀌어도 아래 버튼이 움직이지 않게 한다.
+function reserveHeroHeight() {
+    const currentText = typingText.textContent;
+    heroTitle.style.minHeight = '';
+    let maxHeight = 0;
+    TYPING_PHRASES.forEach(phrase => {
+        typingText.textContent = phrase;
+        maxHeight = Math.max(maxHeight, heroTitle.offsetHeight);
+    });
+    typingText.textContent = currentText;
+    heroTitle.style.minHeight = `${maxHeight}px`;
+}
+
+function stepTyping() {
+    const typing = STATE.typing;
+    const phraseLength = Array.from(TYPING_PHRASES[typing.phraseIndex]).length;
+    let delay = typing.isErasing ? TYPING_DELAY.erase : TYPING_DELAY.type;
+
+    if (!typing.isErasing) {
+        typing.charCount += 1;
+        if (typing.charCount === phraseLength) {
+            typing.isErasing = true;
+            delay = TYPING_DELAY.hold;
+        }
+    } else {
+        typing.charCount -= 1;
+        if (typing.charCount === 0) {
+            typing.isErasing = false;
+            typing.phraseIndex = (typing.phraseIndex + 1) % TYPING_PHRASES.length;
+            delay = TYPING_DELAY.next;
+        }
+    }
+
+    renderTyping();
+    setTimeout(stepTyping, delay);
+}
+
+function startTyping() {
+    reserveHeroHeight();
+    window.addEventListener('resize', reserveHeroHeight);
+
+    // 움직임 감소 설정이면 첫 문구를 고정해서 보여준다.
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        typingText.classList.add('typing-static');
+        return;
+    }
+
+    renderTyping();
+    setTimeout(stepTyping, TYPING_DELAY.next);
 }
 
 // GitHub 프로젝트
@@ -121,8 +189,10 @@ async function fetchGitHubRepos() {
         if (!Array.isArray(repos)) {
             throw new Error('저장소 목록 형식이 올바르지 않습니다.');
         }
-        STATE.repos = repos;
-        STATE.repoStatus = repos.length === 0 ? 'empty' : 'success';
+        // 저장소 설명 칸을 채운 저장소만 보여준다.
+        const describedRepos = repos.filter(repo => typeof repo.description === 'string' && repo.description.trim() !== '');
+        STATE.repos = describedRepos;
+        STATE.repoStatus = describedRepos.length === 0 ? 'empty' : 'success';
     } catch (error) {
         STATE.repoStatus = 'error';
     }
@@ -227,6 +297,7 @@ function initializePage() {
 
     renderTheme();
     renderMenu();
+    startTyping();
     updateScrollState();
     observeSections();
     fetchGitHubRepos();
