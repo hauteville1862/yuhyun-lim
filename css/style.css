@@ -1,24 +1,24 @@
 /* 모바일 화면을 기본으로 작성하고 768px, 1024px에서 확장한다. */
 :root {
-    --bg-main: #fcfaf6;
-    --bg-surface: #ffffff;
-    --bg-header-scrolled: #f3e6ea;
-    --text-title: #361019;
-    --text-main: #451620;
-    --text-muted: #733e4a;
+    --bg-main: #ffffff;
+    --bg-surface: #f6f6f9;
+    --bg-header-scrolled: #f6f6f9;
+    --text-title: #1b212c;
+    --text-main: #343b46;
+    --text-muted: #505766;
     --text-inverse: #ffffff;
-    --accent: #8c2b3e;
-    --accent-hover: #a5374d;
-    --repo-hover: #1a070c;
-    --fig-green: #506731;
-    --fig-green-light: #edf2e4;
-    --border-color: rgba(104, 127, 67, 0.12);
-    --border-control: #858b79;
-    --focus-ring: rgba(140, 43, 62, 0.18);
+    --accent: #0e0e4d;
+    --accent-hover: #26267a;
+    --repo-hover: #0e0e4d;
+    --fig-green: #0e0e4d;
+    --fig-green-light: #ececf4;
+    --border-color: #e9e9f0;
+    --border-control: #808898;
+    --focus-ring: rgba(14, 14, 77, 0.18);
     --error: #a22219;
-    --shadow-sm: 0 4px 16px rgba(69, 22, 32, 0.05);
-    --shadow-md: 0 12px 32px rgba(69, 22, 32, 0.09);
-    --shadow-lg: 0 16px 40px rgba(69, 22, 32, 0.12);
+    --shadow-sm: 0 4px 16px rgba(27, 33, 44, 0.05);
+    --shadow-md: 0 12px 32px rgba(27, 33, 44, 0.09);
+    --shadow-lg: 0 16px 40px rgba(27, 33, 44, 0.12);
     --font-heading: 'Nanum Myeongjo', serif;
     --font-body: 'Nanum Gothic', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
     /* 1rem을 기준으로 단계마다 1.25배. 역할별로 필요한 단계만 사용한다. */
@@ -38,21 +38,21 @@
     --layout-gap: 1rem;
 }
 [data-theme="dark"] {
-    --bg-main: #181516;
-    --bg-surface: #221d1f;
-    --bg-header-scrolled: #392b33;
-    --text-title: #f5f3f4;
-    --text-main: #cfccd0;
-    --text-muted: #a59da5;
-    --text-inverse: #181516;
-    --accent: #d48897;
-    --accent-hover: #e29cb7;
+    --bg-main: #0d0e1c;
+    --bg-surface: #161830;
+    --bg-header-scrolled: #1d2040;
+    --text-title: #f4f5f8;
+    --text-main: #d0d5dc;
+    --text-muted: #afb5c2;
+    --text-inverse: #0d0e1c;
+    --accent: #a7ceff;
+    --accent-hover: #c4dcff;
     --repo-hover: #ffffff;
-    --fig-green: #9bb872;
-    --fig-green-light: rgba(155, 184, 114, 0.14);
+    --fig-green: #a7ceff;
+    --fig-green-light: rgba(167, 206, 255, 0.14);
     --border-color: rgba(255, 255, 255, 0.08);
-    --border-control: #817982;
-    --focus-ring: rgba(212, 136, 151, 0.35);
+    --border-control: #8b93a1;
+    --focus-ring: rgba(167, 206, 255, 0.35);
     --error: #ff5c52;
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
     --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.45);
