@@ -798,10 +798,13 @@ input::placeholder, textarea::placeholder {
         gap: var(--space-md);
     }
     .change-head {
-        padding: 0 0 var(--space-xs);
-        color: var(--text-muted);
-        font-size: var(--text-sm);
+        padding: 0 0 var(--space-sm);
+        border-bottom: 2px solid var(--text-title);
         font-weight: 700;
+    }
+    .change-head .change-before,
+    .change-head .change-after {
+        color: var(--text-title);
     }
     .change-flow {
         display: grid;
